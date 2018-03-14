@@ -105,6 +105,18 @@
     <Reference Include="MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.Binding.5.6.3\lib\Xamarin.iOS10\MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.7\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.4\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SuspilneKazky\SuspilneKazky.csproj">
@@ -123,6 +135,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="ViewCells\StorySongViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -137,13 +150,17 @@
     <Compile Include="MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="StoriesViewController.cs" />
-    <Compile Include="StoriesViewController.designer.cs">
-      <DependentUpon>StoriesViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="RadioViewController.cs" />
     <Compile Include="RadioViewController.designer.cs">
       <DependentUpon>RadioViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCells\StorySongViewCell.cs" />
+    <Compile Include="ViewCells\StorySongViewCell.designer.cs">
+      <DependentUpon>StorySongViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoriesCollectionViewController.cs" />
+    <Compile Include="StoriesCollectionViewController.designer.cs">
+      <DependentUpon>StoriesCollectionViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
