@@ -41,8 +41,8 @@ namespace SuspilneKazky.DataAccess
                 foreach (var block in blocks)
                 {
                     var storySongItem = new StorySong();
-                    storySongItem.SongUri = new Uri(BASE_URI, block.PathName);
-
+                    storySongItem.DetailsUri = new Uri(BASE_URI, block.PathName);
+                    await GetSongUriAsync(storySongItem);
                     var caption = block.QuerySelector("div.tales-list__tale__tale-caption");
                     storySongItem.Name = caption?.TextContent?.Trim() ?? string.Empty;
 
@@ -69,7 +69,26 @@ namespace SuspilneKazky.DataAccess
                 Debug.WriteLine(ex);
             }
 
+
+
             return list;
+        }
+
+        private async Task GetSongUriAsync(StorySong item)
+        {
+            var content = await _httpClient.GetStringAsync(item.DetailsUri);
+            var parser = new HtmlParser();
+            var document = parser.Parse(content);
+            var audioBlock = document.QuerySelector("div.player_wrapper")?.QuerySelector("source") as IHtmlSourceElement;
+            if (audioBlock != null)
+            {
+                item.SongUri = new Uri(audioBlock.Source);
+                if (audioBlock.Source.StartsWith("about:///", StringComparison.OrdinalIgnoreCase))
+                {
+                    var relative = audioBlock.Source.Substring("about:///".Length);
+                    item.SongUri = new Uri(BASE_URI, relative);
+                }
+            }
         }
     }
 }

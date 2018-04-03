@@ -2,6 +2,9 @@
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Logging;
+using SuspilneKazky.DataAccess;
 using UIKit;
 
 namespace SuspilneKazky.iOS
@@ -28,6 +31,10 @@ namespace SuspilneKazky.iOS
             
         }
 
+        protected override MvxLogProviderType GetDefaultLogProviderType()
+        {
+            return MvxLogProviderType.None;
+        }
 
         protected override IMvxIosViewPresenter CreatePresenter()
         {
@@ -42,7 +49,7 @@ namespace SuspilneKazky.iOS
         protected override void RegisterSpecificServices()
         {
             base.RegisterSpecificServices();
-
+            Mvx.LazyConstructAndRegisterSingleton<IAudioManager, AudioManager>();
         }
 
         protected override void OnInitialazing()

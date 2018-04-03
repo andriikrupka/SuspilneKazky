@@ -12,10 +12,12 @@ namespace SuspilneKazky.ViewModels
     public class StoriesViewModel : MvxViewModel
     {
         private readonly IMediaProvider _mediaProvider;
+        private readonly IAudioManager _audioManager;
 
-        public StoriesViewModel(IMediaProvider mediaProvider)
+        public StoriesViewModel(IMediaProvider mediaProvider, IAudioManager audioManager)
         {
             _mediaProvider = mediaProvider;
+            _audioManager = audioManager;
             PlaySongCommand = new MvxCommand<StorySong>(PlaySoundExecute);
         }
 
@@ -23,7 +25,7 @@ namespace SuspilneKazky.ViewModels
         {
             if (storySong != null)
             {
-                Debug.WriteLine(storySong.Name);
+                _audioManager.Play(storySong);
             }
         }
 
@@ -40,6 +42,7 @@ namespace SuspilneKazky.ViewModels
             try
             {
                 Items = await _mediaProvider.LoadStoriesAsync();
+                _audioManager.SetupItems(Items);
             }
             catch
             {

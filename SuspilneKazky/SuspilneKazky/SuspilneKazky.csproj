@@ -36,6 +36,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RadioViewModel.cs" />
     <Compile Include="ViewModels\StoriesViewModel.cs" />
+    <Compile Include="DataAccess\IAudioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
