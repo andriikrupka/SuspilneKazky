@@ -134,6 +134,7 @@
         <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story.png" />
         <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%402x.png" />
         <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%403x.png" />
+        <ImageAsset Include="Assets.xcassets\play-icon.imageset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -145,6 +146,7 @@
         <Folder Include="Assets.xcassets\background-img.imageset\" />
         <Folder Include="Assets.xcassets\radio-icon.imageset\" />
         <Folder Include="Assets.xcassets\story-icon.imageset\" />
+        <Folder Include="Assets.xcassets\play-icon.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -152,6 +154,7 @@
         <InterfaceDefinition Include="Views\RadioViewController.xib" />
         <InterfaceDefinition Include="Views\StoriesViewController.xib" />
         <InterfaceDefinition Include="Views\Main.storyboard" />
+        <InterfaceDefinition Include="Views\StoryPlayerController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -179,6 +182,10 @@
         <Compile Include="Views\MainViewController.cs" />
         <Compile Include="Views\MainViewController.designer.cs">
           <DependentUpon>MainViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\StoryPlayerController.cs" />
+        <Compile Include="Views\StoryPlayerController.designer.cs">
+          <DependentUpon>StoryPlayerController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>

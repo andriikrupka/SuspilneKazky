@@ -9,6 +9,7 @@
         <!--Main View Controller-->
         <scene sceneID="Biw-tI-Vqb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3S-Y5-qjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="MainViewController" id="Kaw-Jy-NL9" customClass="MainViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yhb-vc-uwB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -16,7 +17,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b3S-Y5-qjh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2080" y="-892"/>
         </scene>

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.ComponentModel;
+using Newtonsoft.Json;
 
 namespace KazkySuspilne.Models
 {
@@ -25,5 +26,10 @@ namespace KazkySuspilne.Models
         public string FullImageUrl => $"{Constatns.BaseUrl}/{Image}";
 
         public string FullSongUrl => $"{Constatns.BaseUrl}/{Song}";
+    }
+
+    public class DetailedSong : StorySong
+    {
+        public double Duration { get; set; }
     }
 }

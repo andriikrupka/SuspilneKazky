@@ -7,7 +7,7 @@ using UIKit;
 namespace KazkySuspilne.iOS.Views
 {
     [MvxFromStoryboard("Main")]
-    [MvxRootPresentation(WrapInNavigationController = true)]
+    [MvxRootPresentation()]
     public partial class MainViewController : MvxTabBarViewController<MainViewModel>
     {
         private bool _isPresentedFirstTime = true;
@@ -27,10 +27,12 @@ namespace KazkySuspilne.iOS.Views
             }
         }
 
+        
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            NavigationController.NavigationBar.Hidden = true;
+            
             TabBar.SelectedImageTintColor = UIColor.FromRGB(220, 83, 67);
             TabBar.TintColor = UIColor.White;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using KazkySuspilne.Models;
 using KazkySuspilne.Services;
 using KazkySuspilne.ViewModels;
 using MvvmCross.Commands;
@@ -26,7 +27,8 @@ namespace KazkySuspilne
 
         private void ItemSelected(StorySongItemViewModel item)
         {
-            _audioService.Play(item.StorySong);
+            _audioService.SetPlaylist(Stories.Select(x => x.StorySong).ToList());
+            NavigationService.Navigate<StoryPlayerViewModel, StorySong>(item.StorySong);
         }
 
         public MvxObservableCollection<StorySongItemViewModel> Stories { get; set; }

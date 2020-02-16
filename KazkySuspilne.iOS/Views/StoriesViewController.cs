@@ -1,5 +1,4 @@
-﻿using System;
-using KazkySuspilne.iOS.Cells;
+﻿using KazkySuspilne.iOS.Cells;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvvmCross.Platforms.Ios.Views;
@@ -7,11 +6,19 @@ using UIKit;
 
 namespace KazkySuspilne.iOS.Views
 {
-    [MvxTabPresentation(WrapInNavigationController = false, TabName = "Казки", TabIconName = "story-icon", TabSelectedIconName = "story-icon")]
+    [MvxTabPresentation(WrapInNavigationController = true,
+        TabName = "Казки",
+        TabIconName = "story-icon",
+        TabSelectedIconName = "story-icon")]
     public partial class StoriesViewController : MvxViewController<StoriesViewModel>
     {
         public StoriesViewController() : base("StoriesViewController", null)
         {
+        }
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            NavigationController.SetNavigationBarHidden(true, true);
         }
 
         public override void ViewDidLoad()
