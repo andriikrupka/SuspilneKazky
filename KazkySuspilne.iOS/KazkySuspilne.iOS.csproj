@@ -126,15 +126,25 @@
         <ImageAsset Include="Assets.xcassets\background-img.imageset\list-bg.png" />
         <ImageAsset Include="Assets.xcassets\background-img.imageset\list-bg-1.png" />
         <ImageAsset Include="Assets.xcassets\background-img.imageset\list-bg-2.png" />
+        <ImageAsset Include="Assets.xcassets\radio-icon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\radio-icon.imageset\icon-radio.png" />
+        <ImageAsset Include="Assets.xcassets\radio-icon.imageset\icon-radio%402x.png" />
+        <ImageAsset Include="Assets.xcassets\radio-icon.imageset\icon-radio%403x.png" />
+        <ImageAsset Include="Assets.xcassets\story-icon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story.png" />
+        <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%402x.png" />
+        <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%403x.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
         <Folder Include="Views\" />
         <Folder Include="Cells\" />
         <Folder Include="Utilities\" />
-        <Folder Include="Assets.xcassets\background-img.imageset\" />
         <Folder Include="Fonts\" />
         <Folder Include="Services\" />
+        <Folder Include="Assets.xcassets\background-img.imageset\" />
+        <Folder Include="Assets.xcassets\radio-icon.imageset\" />
+        <Folder Include="Assets.xcassets\story-icon.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />

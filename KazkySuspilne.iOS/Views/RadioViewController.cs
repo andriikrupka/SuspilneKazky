@@ -6,7 +6,7 @@ using UIKit;
 
 namespace KazkySuspilne.iOS.Views
 {
-    [MvxTabPresentation(WrapInNavigationController = false)]
+    [MvxTabPresentation(WrapInNavigationController = false, TabName = "Радіо", TabIconName = "radio-icon", TabSelectedIconName = "radio-icon")]
     public partial class RadioViewController : MvxViewController<RadioViewModel>
     {
         public RadioViewController() : base("RadioViewController", null)
@@ -16,13 +16,9 @@ namespace KazkySuspilne.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-        }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            var image = UIImage.FromBundle("background-img");
+            this.View.BackgroundColor = UIColor.FromPatternImage(image);
         }
     }
 }

@@ -7,7 +7,7 @@ using UIKit;
 
 namespace KazkySuspilne.iOS.Views
 {
-    [MvxTabPresentation(WrapInNavigationController = false)]
+    [MvxTabPresentation(WrapInNavigationController = false, TabName = "Казки", TabIconName = "story-icon", TabSelectedIconName = "story-icon")]
     public partial class StoriesViewController : MvxViewController<StoriesViewModel>
     {
         public StoriesViewController() : base("StoriesViewController", null)

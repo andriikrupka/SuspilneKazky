@@ -31,6 +31,8 @@ namespace KazkySuspilne.iOS.Views
         {
             base.ViewDidLoad();
             NavigationController.NavigationBar.Hidden = true;
+            TabBar.SelectedImageTintColor = UIColor.FromRGB(220, 83, 67);
+            TabBar.TintColor = UIColor.White;
         }
     }
 }
