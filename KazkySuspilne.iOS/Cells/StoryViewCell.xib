@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cZE-iV-UFb" customClass="StoryViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-P8-aIR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpB-3l-ck5" userLabel="Name View">
+                        <rect key="frame" x="20" y="202" width="121" height="36"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Un-rx-a9W">
+                                <rect key="frame" x="0.0" y="0.0" width="121" height="36"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.32549019610000002" blue="0.26274509800000001" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ЗАЄЦЬ ХВАЛЬКО" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZG-0Z-nU9">
+                                <rect key="frame" x="8" y="8" width="105" height="20"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Un-rx-a9W" secondAttribute="trailing" id="DJB-VE-wUq"/>
+                            <constraint firstItem="4Un-rx-a9W" firstAttribute="leading" secondItem="vpB-3l-ck5" secondAttribute="leading" id="Fz9-rc-0Fn"/>
+                            <constraint firstAttribute="bottom" secondItem="3ZG-0Z-nU9" secondAttribute="bottom" constant="8" id="IKg-Or-hTb"/>
+                            <constraint firstItem="4Un-rx-a9W" firstAttribute="top" secondItem="vpB-3l-ck5" secondAttribute="top" id="LlJ-2M-aqb"/>
+                            <constraint firstAttribute="trailing" secondItem="3ZG-0Z-nU9" secondAttribute="trailing" constant="8" id="Yaw-4i-M9a"/>
+                            <constraint firstItem="3ZG-0Z-nU9" firstAttribute="top" secondItem="vpB-3l-ck5" secondAttribute="top" constant="8" id="eHY-QC-U9Z"/>
+                            <constraint firstAttribute="bottom" secondItem="4Un-rx-a9W" secondAttribute="bottom" id="iE9-Ky-Klp"/>
+                            <constraint firstItem="3ZG-0Z-nU9" firstAttribute="leading" secondItem="vpB-3l-ck5" secondAttribute="leading" constant="8" id="qEp-Fs-IMM"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54g-0z-rXJ" userLabel="Author View">
+                        <rect key="frame" x="20" y="258" width="219" height="42"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crl-3T-nmQ" userLabel="Author Opacity View">
+                                <rect key="frame" x="0.0" y="0.0" width="219" height="42"/>
+                                <color key="backgroundColor" red="0.86274509803921573" green="0.32549019607843138" blue="0.2627450980392157" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="АНДРІЙ ХЛИВНЮК, ВОКАЛІСТ ГУРТУ “БУМБОКС”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ew-iN-SjF">
+                                <rect key="frame" x="4" y="4" width="211" height="34"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="crl-3T-nmQ" firstAttribute="top" secondItem="54g-0z-rXJ" secondAttribute="top" id="08U-5F-qCF"/>
+                            <constraint firstAttribute="bottom" secondItem="7ew-iN-SjF" secondAttribute="bottom" constant="4" id="1DZ-3i-LDS"/>
+                            <constraint firstItem="7ew-iN-SjF" firstAttribute="leading" secondItem="54g-0z-rXJ" secondAttribute="leading" constant="4" id="BUF-Q8-uTt"/>
+                            <constraint firstAttribute="bottom" secondItem="crl-3T-nmQ" secondAttribute="bottom" id="IXE-T8-7n4"/>
+                            <constraint firstAttribute="trailing" secondItem="7ew-iN-SjF" secondAttribute="trailing" constant="4" id="OlD-Ee-g9O"/>
+                            <constraint firstAttribute="trailing" secondItem="crl-3T-nmQ" secondAttribute="trailing" id="STP-Lb-iQc"/>
+                            <constraint firstItem="7ew-iN-SjF" firstAttribute="top" secondItem="54g-0z-rXJ" secondAttribute="top" constant="4" id="T75-df-AKz"/>
+                            <constraint firstItem="crl-3T-nmQ" firstAttribute="leading" secondItem="54g-0z-rXJ" secondAttribute="leading" id="sy0-SJ-SvX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="54g-0z-rXJ" secondAttribute="bottom" constant="20" id="5Ao-Ue-SR3"/>
+                <constraint firstAttribute="trailing" secondItem="DWo-P8-aIR" secondAttribute="trailing" id="AhP-3b-ASg"/>
+                <constraint firstItem="DWo-P8-aIR" firstAttribute="top" secondItem="cZE-iV-UFb" secondAttribute="top" id="F03-gG-8RQ"/>
+                <constraint firstAttribute="bottom" secondItem="DWo-P8-aIR" secondAttribute="bottom" id="Hdp-S6-e6S"/>
+                <constraint firstItem="54g-0z-rXJ" firstAttribute="top" secondItem="vpB-3l-ck5" secondAttribute="bottom" constant="20" id="N04-pV-0Qo"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="54g-0z-rXJ" secondAttribute="trailing" constant="20" id="WrA-hs-erL"/>
+                <constraint firstItem="DWo-P8-aIR" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" id="h5h-Po-EPO"/>
+                <constraint firstItem="54g-0z-rXJ" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="20" id="icH-pN-1yl"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vpB-3l-ck5" secondAttribute="trailing" constant="20" id="jOy-bg-pdi"/>
+                <constraint firstItem="vpB-3l-ck5" firstAttribute="leading" secondItem="cZE-iV-UFb" secondAttribute="leading" constant="20" id="nrN-6a-D6s"/>
+            </constraints>
+            <size key="customSize" width="320" height="320"/>
+            <connections>
+                <outlet property="AuthorLabel" destination="7ew-iN-SjF" id="Nb1-Ts-H7t"/>
+                <outlet property="AuthorView" destination="54g-0z-rXJ" id="319-Ac-aUt"/>
+                <outlet property="NameLabel" destination="3ZG-0Z-nU9" id="1Fr-dz-b0W"/>
+                <outlet property="NameView" destination="vpB-3l-ck5" id="fun-PA-YfZ"/>
+                <outlet property="StoryImageView" destination="DWo-P8-aIR" id="MC8-p1-Bra"/>
+            </connections>
+            <point key="canvasLocation" x="-162.31884057971016" y="143.97321428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
