@@ -141,6 +141,8 @@
         <InterfaceDefinition Include="Main.storyboard" />
         <InterfaceDefinition Include="Views\MainViewController.xib" />
         <InterfaceDefinition Include="Cells\StoryViewCell.xib" />
+        <InterfaceDefinition Include="Views\RadioViewController.xib" />
+        <InterfaceDefinition Include="Views\StoriesViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -165,6 +167,15 @@
         <Compile Include="Utilities\UIHelper.cs" />
         <Compile Include="KazkyIosApp.cs" />
         <Compile Include="Services\AudioService.cs" />
+        <Compile Include="Views\RadioViewController.cs" />
+        <Compile Include="Views\RadioViewController.designer.cs">
+          <DependentUpon>RadioViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\StoriesViewController.cs" />
+        <Compile Include="Views\StoriesViewController.designer.cs">
+          <DependentUpon>StoriesViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\NewsFlowLayoutCollectionViewSource.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\KazkySuspilne\KazkySuspilne.csproj">

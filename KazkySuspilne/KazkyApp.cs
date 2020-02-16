@@ -1,5 +1,6 @@
 ﻿using System;
 using KazkySuspilne.Services;
+using KazkySuspilne.ViewModels;
 using MvvmCross;
 using MvvmCross.ViewModels;
 
@@ -10,7 +11,7 @@ namespace KazkySuspilne
         public override void Initialize()
         {
             Mvx.IoCProvider.RegisterSingleton<ISuspilneService>(new SuspilneService());
-            RegisterAppStart<MainViewModel>();
+            RegisterAppStart<StoriesViewModel>();
         }
     }
 }
