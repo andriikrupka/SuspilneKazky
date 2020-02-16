@@ -134,6 +134,7 @@
         <Folder Include="Utilities\" />
         <Folder Include="Assets.xcassets\background-img.imageset\" />
         <Folder Include="Fonts\" />
+        <Folder Include="Services\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -162,6 +163,8 @@
           <DependentUpon>StoryViewCell.cs</DependentUpon>
         </Compile>
         <Compile Include="Utilities\UIHelper.cs" />
+        <Compile Include="KazkyIosApp.cs" />
+        <Compile Include="Services\AudioService.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\KazkySuspilne\KazkySuspilne.csproj">

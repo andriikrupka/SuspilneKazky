@@ -34,7 +34,7 @@ namespace KazkySuspilne.iOS.Views
             StoriesCollectionView.Source = source;
             var set = this.CreateBindingSet<MainViewController, MainViewModel>();
             set.Bind(source).To(vm => vm.Stories);
-            //set.Bind(source).For(x => x.SelectionChangedCommand).To(vm => vm.PlaySongCommand);
+            set.Bind(source).For(x => x.SelectionChangedCommand).To(vm => vm.ItemSelectedCommand);
             set.Apply();
 
             StoriesCollectionView.ReloadData();
