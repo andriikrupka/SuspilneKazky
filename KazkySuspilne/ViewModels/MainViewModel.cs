@@ -9,6 +9,7 @@ namespace KazkySuspilne.ViewModels
 {
     public class MainViewModel : MvxNavigationViewModel
     {
+
         public MainViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService) : base(logProvider, navigationService)
         {
             ShowInitialViewModelsCommand = new MvxAsyncCommand(ShowInitialViewModelsExecute);
@@ -20,16 +21,6 @@ namespace KazkySuspilne.ViewModels
         {
             await NavigationService.Navigate<StoriesViewModel>();
             await NavigationService.Navigate<RadioViewModel>();
-        }
-
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
         }
     }
 }

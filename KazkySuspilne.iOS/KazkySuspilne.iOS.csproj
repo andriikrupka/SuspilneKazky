@@ -138,11 +138,10 @@
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
-        <InterfaceDefinition Include="Main.storyboard" />
-        <InterfaceDefinition Include="Views\MainViewController.xib" />
         <InterfaceDefinition Include="Cells\StoryViewCell.xib" />
         <InterfaceDefinition Include="Views\RadioViewController.xib" />
         <InterfaceDefinition Include="Views\StoriesViewController.xib" />
+        <InterfaceDefinition Include="Views\Main.storyboard" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -151,15 +150,6 @@
     <ItemGroup>
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
-        <Compile Include="SceneDelegate.cs" />
-        <Compile Include="ViewController.cs" />
-        <Compile Include="ViewController.designer.cs">
-            <DependentUpon>ViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Views\MainViewController.cs" />
-        <Compile Include="Views\MainViewController.designer.cs">
-          <DependentUpon>MainViewController.cs</DependentUpon>
-        </Compile>
         <Compile Include="Cells\StoryViewCell.cs" />
         <Compile Include="Cells\StoryViewCell.designer.cs">
           <DependentUpon>StoryViewCell.cs</DependentUpon>
@@ -176,6 +166,10 @@
           <DependentUpon>StoriesViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="Views\NewsFlowLayoutCollectionViewSource.cs" />
+        <Compile Include="Views\MainViewController.cs" />
+        <Compile Include="Views\MainViewController.designer.cs">
+          <DependentUpon>MainViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\KazkySuspilne\KazkySuspilne.csproj">

@@ -7,7 +7,7 @@ using UIKit;
 
 namespace KazkySuspilne.iOS.Views
 {
-    //[MvxTabPresentation(WrapInNavigationController = false)]
+    [MvxTabPresentation(WrapInNavigationController = false)]
     public partial class StoriesViewController : MvxViewController<StoriesViewModel>
     {
         public StoriesViewController() : base("StoriesViewController", null)

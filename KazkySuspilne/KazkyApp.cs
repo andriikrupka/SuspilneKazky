@@ -11,7 +11,7 @@ namespace KazkySuspilne
         public override void Initialize()
         {
             Mvx.IoCProvider.RegisterSingleton<ISuspilneService>(new SuspilneService());
-            RegisterAppStart<StoriesViewModel>();
+            RegisterAppStart<MainViewModel>();
         }
     }
 }

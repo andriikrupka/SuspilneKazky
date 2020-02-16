@@ -1,58 +1,39 @@
 // WARNING
 //
-// This file has been generated automatically by Visual Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Visual Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
 using System.CodeDom.Compiler;
 
 namespace KazkySuspilne.iOS.Cells
 {
-	[Register ("StoryViewCell")]
-	partial class StoryViewCell
-	{
-		[Outlet]
-		UIKit.UILabel AuthorLabel { get; set; }
+    [Register ("StoryViewCell")]
+    partial class StoryViewCell
+    {
+        [Outlet]
+        UIKit.UILabel AuthorLabel { get; set; }
 
-		[Outlet]
-		UIKit.UIView AuthorView { get; set; }
 
-		[Outlet]
-		UIKit.UILabel NameLabel { get; set; }
+        [Outlet]
+        UIKit.UIView AuthorView { get; set; }
 
-		[Outlet]
-		UIKit.UIView NameView { get; set; }
 
-		[Outlet]
-		UIKit.UIImageView StoryImageView { get; set; }
-		
-		void ReleaseDesignerOutlets ()
-		{
-			if (StoryImageView != null) {
-				StoryImageView.Dispose ();
-				StoryImageView = null;
-			}
+        [Outlet]
+        UIKit.UILabel NameLabel { get; set; }
 
-			if (NameView != null) {
-				NameView.Dispose ();
-				NameView = null;
-			}
 
-			if (AuthorView != null) {
-				AuthorView.Dispose ();
-				AuthorView = null;
-			}
+        [Outlet]
+        UIKit.UIView NameView { get; set; }
 
-			if (AuthorLabel != null) {
-				AuthorLabel.Dispose ();
-				AuthorLabel = null;
-			}
 
-			if (NameLabel != null) {
-				NameLabel.Dispose ();
-				NameLabel = null;
-			}
-		}
-	}
+        [Outlet]
+        UIKit.UIImageView StoryImageView { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }
