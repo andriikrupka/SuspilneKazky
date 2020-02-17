@@ -9,7 +9,7 @@ namespace KazkySuspilne.ViewModels
 {
     public class PlayerViewModel : MvxViewModel<MediaQueue>
     {
-        private TimeSpan _currentDuration;
+        private double _currentDurationSeconds;
         private double _currentPositionSeconds;
         private bool _isPlaying;
         private MediaQueue _mediaQueue;
@@ -68,10 +68,10 @@ namespace KazkySuspilne.ViewModels
             }
         }
 
-        public TimeSpan CurrentDuration
+        public double CurrentDurationSeconds
         {
-            get => _currentDuration;
-            set => SetProperty(ref _currentDuration, value);
+            get => _currentDurationSeconds;
+            set => SetProperty(ref _currentDurationSeconds, value);
         }
 
         public IMediaManager MediaManager => CrossMediaManager.Current;
@@ -91,7 +91,6 @@ namespace KazkySuspilne.ViewModels
 
         private void MediaManager_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)
         {
-            CurrentDuration = MediaManager.Duration;
             IsPlaying = MediaManager.IsPlaying() || MediaManager.IsBuffering();
         }
 
@@ -99,18 +98,14 @@ namespace KazkySuspilne.ViewModels
         {
             _currentPositionSeconds = e.Position.TotalSeconds;
             RaisePropertyChanged(nameof(CurrentPositionSeconds));
+
+            CurrentDurationSeconds = MediaManager.Duration.TotalSeconds;
         }
 
         private void MediaManager_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
         {
             CurrentMediaItem = e.MediaItem;
 
-            _currentMediaItem.MetadataUpdated += _currentMediaItem_MetadataUpdated;
-        }
-
-        private void _currentMediaItem_MetadataUpdated(object sender, MediaManager.Media.MetadataChangedEventArgs e)
-        {
-            
         }
     }
 }

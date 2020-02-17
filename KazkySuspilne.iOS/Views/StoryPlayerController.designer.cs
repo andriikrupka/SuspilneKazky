@@ -16,6 +16,12 @@ namespace KazkySuspilne.iOS.Views
 		UIKit.UIImageView BackgroundImageView { get; set; }
 
 		[Outlet]
+		UIKit.UILabel CurrentTimeLabel { get; set; }
+
+		[Outlet]
+		UIKit.UILabel DurationTimeLabel { get; set; }
+
+		[Outlet]
 		UIKit.UIButton NextButton { get; set; }
 
 		[Outlet]
@@ -37,19 +43,9 @@ namespace KazkySuspilne.iOS.Views
 				BackgroundImageView = null;
 			}
 
-			if (Slider != null) {
-				Slider.Dispose ();
-				Slider = null;
-			}
-
-			if (PreviousButton != null) {
-				PreviousButton.Dispose ();
-				PreviousButton = null;
-			}
-
-			if (PlayButton != null) {
-				PlayButton.Dispose ();
-				PlayButton = null;
+			if (NextButton != null) {
+				NextButton.Dispose ();
+				NextButton = null;
 			}
 
 			if (PauseButton != null) {
@@ -57,9 +53,29 @@ namespace KazkySuspilne.iOS.Views
 				PauseButton = null;
 			}
 
-			if (NextButton != null) {
-				NextButton.Dispose ();
-				NextButton = null;
+			if (PlayButton != null) {
+				PlayButton.Dispose ();
+				PlayButton = null;
+			}
+
+			if (PreviousButton != null) {
+				PreviousButton.Dispose ();
+				PreviousButton = null;
+			}
+
+			if (Slider != null) {
+				Slider.Dispose ();
+				Slider = null;
+			}
+
+			if (CurrentTimeLabel != null) {
+				CurrentTimeLabel.Dispose ();
+				CurrentTimeLabel = null;
+			}
+
+			if (DurationTimeLabel != null) {
+				DurationTimeLabel.Dispose ();
+				DurationTimeLabel = null;
 			}
 		}
 	}
