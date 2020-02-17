@@ -78,6 +78,9 @@
       <PackageReference Include="Xamarin.FFImageLoading">
         <Version>2.4.11.982</Version>
       </PackageReference>
+      <PackageReference Include="Plugin.MediaManager">
+        <Version>0.9.6</Version>
+      </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

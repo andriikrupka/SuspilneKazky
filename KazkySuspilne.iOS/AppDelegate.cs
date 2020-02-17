@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using MediaManager;
 using MvvmCross.Platforms.Ios.Core;
 using UIKit;
 
@@ -9,8 +10,11 @@ namespace KazkySuspilne.iOS
     [Register("AppDelegate")]
     public class AppDelegate : MvxApplicationDelegate<KazkyIosApp, KazkyApp>
     {
-
-        
+        public override void FinishedLaunching(UIApplication application)
+        {
+            base.FinishedLaunching(application);
+            CrossMediaManager.Current.Play();
+        }
     }
 }
 

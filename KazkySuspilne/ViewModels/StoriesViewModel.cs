@@ -4,12 +4,13 @@ using System.Threading.Tasks;
 using KazkySuspilne.Models;
 using KazkySuspilne.Services;
 using KazkySuspilne.ViewModels;
+using MediaManager.Queue;
 using MvvmCross.Commands;
 using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
-namespace KazkySuspilne
+namespace KazkySuspilne.ViewModels
 {
     public class StoriesViewModel : MvxNavigationViewModel
     {
@@ -25,10 +26,21 @@ namespace KazkySuspilne
             ItemSelectedCommand = new MvxCommand<StorySongItemViewModel>(ItemSelected);
         }
 
-        private void ItemSelected(StorySongItemViewModel item)
+        private void ItemSelected(StorySongItemViewModel storySongItemViewModel)
         {
-            _audioService.SetPlaylist(Stories.Select(x => x.StorySong).ToList());
-            NavigationService.Navigate<StoryPlayerViewModel, StorySong>(item.StorySong);
+            var queue = new MediaQueue();
+            for (var i = 0; i < Stories.Count; i++)
+            {
+                var item = Stories[i];
+                queue.Add(item.StorySong.AsMediaItem());
+                if (item == storySongItemViewModel)
+                {
+                    queue.CurrentIndex = i;
+                }
+            }
+            
+
+            NavigationService.Navigate<PlayerViewModel, MediaQueue>(queue);
         }
 
         public MvxObservableCollection<StorySongItemViewModel> Stories { get; set; }
