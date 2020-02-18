@@ -19,8 +19,28 @@ namespace KazkySuspilne.iOS.Views
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            NavigationController.SetNavigationBarHidden(true, true);
+
+
+            var imageView = new UIImageView()
+            {
+                Image = UIImage.FromBundle("info-icon")
+            };
+
+            var infoButton = new UIBarButtonItem(imageView);
+
+            NavigationItem.RightBarButtonItem = infoButton;
+
+
+
+            NavigationController.NavigationBar.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            NavigationController.NavigationBar.ShadowImage = new UIImage();
+            NavigationController.NavigationBar.BackgroundColor = UIColor.Clear;
+            NavigationController.NavigationBar.TintColor = UIColor.White;
+            NavigationController.NavigationBar.BarTintColor = UIColor.Clear;
+            NavigationController.NavigationBar.Translucent = true;
         }
+
+        
 
         public override void ViewDidLoad()
         {

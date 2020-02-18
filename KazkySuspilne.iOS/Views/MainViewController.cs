@@ -32,9 +32,13 @@ namespace KazkySuspilne.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
-            TabBar.SelectedImageTintColor = UIColor.FromRGB(220, 83, 67);
-            TabBar.TintColor = UIColor.White;
+
+            TabBar.Translucent = false;
+            TabBar.BackgroundColor = UIColor.Clear;
+            TabBar.TintColor = UIColor.Green;
+            TabBar.BarTintColor = UIColor.Clear;
+            TabBar.SelectedImageTintColor = UIColor.Green;
+            TabBar.BackgroundImage = null;
         }
     }
 }

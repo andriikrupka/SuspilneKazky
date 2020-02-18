@@ -170,6 +170,10 @@
         <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
         <ImageAsset Include="Assets.xcassets\logo.imageset\logo%402x.png" />
         <ImageAsset Include="Assets.xcassets\logo.imageset\logo%403x.png" />
+        <ImageAsset Include="Assets.xcassets\info-icon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\info-icon.imageset\info.png" />
+        <ImageAsset Include="Assets.xcassets\info-icon.imageset\info%402x.png" />
+        <ImageAsset Include="Assets.xcassets\info-icon.imageset\info%403x.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -190,6 +194,7 @@
         <Folder Include="Assets.xcassets\online-play-button.imageset\" />
         <Folder Include="Assets.xcassets\online-pause-button.imageset\" />
         <Folder Include="Assets.xcassets\logo.imageset\" />
+        <Folder Include="Assets.xcassets\info-icon.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
