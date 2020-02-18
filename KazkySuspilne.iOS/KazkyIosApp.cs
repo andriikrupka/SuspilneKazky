@@ -9,7 +9,6 @@ namespace KazkySuspilne.iOS
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
-            Mvx.IoCProvider.RegisterSingleton<IAudioService>(new Services.AudioService());
         }
     }
 }

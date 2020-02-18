@@ -138,6 +138,38 @@
         <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%402x.png" />
         <ImageAsset Include="Assets.xcassets\story-icon.imageset\icon-story%403x.png" />
         <ImageAsset Include="Assets.xcassets\play-icon.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\prev-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\prev-button.imageset\prev.png" />
+        <ImageAsset Include="Assets.xcassets\prev-button.imageset\prev%402x.png" />
+        <ImageAsset Include="Assets.xcassets\prev-button.imageset\prev%403x.png" />
+        <ImageAsset Include="Assets.xcassets\next-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\next-button.imageset\next.png" />
+        <ImageAsset Include="Assets.xcassets\next-button.imageset\next%402x.png" />
+        <ImageAsset Include="Assets.xcassets\next-button.imageset\next%403x.png" />
+        <ImageAsset Include="Assets.xcassets\play-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\play-button.imageset\play.png" />
+        <ImageAsset Include="Assets.xcassets\play-button.imageset\play%402x.png" />
+        <ImageAsset Include="Assets.xcassets\play-button.imageset\play%403x.png" />
+        <ImageAsset Include="Assets.xcassets\pause-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\pause-button.imageset\pause.png" />
+        <ImageAsset Include="Assets.xcassets\pause-button.imageset\pause%402x.png" />
+        <ImageAsset Include="Assets.xcassets\pause-button.imageset\pause%403x.png" />
+        <ImageAsset Include="Assets.xcassets\online-radio-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\online-radio-button.imageset\online.png" />
+        <ImageAsset Include="Assets.xcassets\online-radio-button.imageset\online%403x.png" />
+        <ImageAsset Include="Assets.xcassets\online-radio-button.imageset\online%402x-1.png" />
+        <ImageAsset Include="Assets.xcassets\online-play-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\online-play-button.imageset\online_play.png" />
+        <ImageAsset Include="Assets.xcassets\online-play-button.imageset\online_play%402x.png" />
+        <ImageAsset Include="Assets.xcassets\online-play-button.imageset\online_play%403x.png" />
+        <ImageAsset Include="Assets.xcassets\online-pause-button.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\online-pause-button.imageset\online_pause-1.png" />
+        <ImageAsset Include="Assets.xcassets\online-pause-button.imageset\online_pause%402x.png" />
+        <ImageAsset Include="Assets.xcassets\online-pause-button.imageset\online_pause%403x.png" />
+        <ImageAsset Include="Assets.xcassets\logo.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
+        <ImageAsset Include="Assets.xcassets\logo.imageset\logo%402x.png" />
+        <ImageAsset Include="Assets.xcassets\logo.imageset\logo%403x.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -150,6 +182,14 @@
         <Folder Include="Assets.xcassets\radio-icon.imageset\" />
         <Folder Include="Assets.xcassets\story-icon.imageset\" />
         <Folder Include="Assets.xcassets\play-icon.imageset\" />
+        <Folder Include="Assets.xcassets\prev-button.imageset\" />
+        <Folder Include="Assets.xcassets\next-button.imageset\" />
+        <Folder Include="Assets.xcassets\play-button.imageset\" />
+        <Folder Include="Assets.xcassets\pause-button.imageset\" />
+        <Folder Include="Assets.xcassets\online-radio-button.imageset\" />
+        <Folder Include="Assets.xcassets\online-play-button.imageset\" />
+        <Folder Include="Assets.xcassets\online-pause-button.imageset\" />
+        <Folder Include="Assets.xcassets\logo.imageset\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -172,7 +212,6 @@
         </Compile>
         <Compile Include="Utilities\UIHelper.cs" />
         <Compile Include="KazkyIosApp.cs" />
-        <Compile Include="Services\AudioService.cs" />
         <Compile Include="Views\RadioViewController.cs" />
         <Compile Include="Views\RadioViewController.designer.cs">
           <DependentUpon>RadioViewController.cs</DependentUpon>

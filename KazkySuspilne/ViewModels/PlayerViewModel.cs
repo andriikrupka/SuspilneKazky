@@ -22,6 +22,7 @@ namespace KazkySuspilne.ViewModels
             MediaManager.MediaItemChanged += MediaManager_MediaItemChanged;
             MediaManager.MediaItemFailed += MediaManager_MediaItemFailed;
             MediaManager.MediaItemFinished += MediaManager_MediaItemFinished;
+            MediaManager.Volume.VolumeChanged += Volume_VolumeChanged;
             
             PlayPauseCommand = new MvxCommand(() => MediaManager.PlayPause());
             PlayNextCommand = new MvxCommand(() =>
@@ -30,16 +31,26 @@ namespace KazkySuspilne.ViewModels
                 RaisePropertyChanged(nameof(CurrentPositionSeconds));
                 MediaManager.PlayNext();
             });
-            PlayPreviousCommand = new MvxCommand(() =>
+            PlayPreviousCommand = new MvxCommand(async () =>
             {
                 _currentPositionSeconds = 0;
                 RaisePropertyChanged(nameof(CurrentPositionSeconds));
-                MediaManager.PlayPrevious();
+                var t =await MediaManager.PlayPrevious();
+                if (t)
+                {
+
+                }
             });
+        }
+
+        private void Volume_VolumeChanged(object sender, MediaManager.Volume.VolumeChangedEventArgs e)
+        {
+            
         }
 
         private void MediaManager_MediaItemFinished(object sender, MediaManager.Media.MediaItemEventArgs e)
         {
+
         }
 
         private void MediaManager_MediaItemFailed(object sender, MediaManager.Media.MediaItemFailedEventArgs e)
@@ -86,7 +97,8 @@ namespace KazkySuspilne.ViewModels
         {
             _mediaQueue = parameter;
             CurrentMediaItem = _mediaQueue.Current;
-            await MediaManager.Play(_mediaQueue);
+            MediaManager.Queue = _mediaQueue;
+            await MediaManager.PlayQueueItem(CurrentMediaItem);
         }
 
         private void MediaManager_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)

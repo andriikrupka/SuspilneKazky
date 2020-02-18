@@ -15,13 +15,11 @@ namespace KazkySuspilne.ViewModels
     public class StoriesViewModel : MvxNavigationViewModel
     {
         private readonly ISuspilneService _suspilneService;
-        private readonly IAudioService _audioService;
 
-        public StoriesViewModel(ISuspilneService suspilneService, IAudioService audioService, IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+        public StoriesViewModel(ISuspilneService suspilneService, IMvxLogProvider logProvider, IMvxNavigationService navigationService)
             : base(logProvider, navigationService)
         {
             _suspilneService = suspilneService;
-            _audioService = audioService;
             Stories = new MvxObservableCollection<StorySongItemViewModel>();
             ItemSelectedCommand = new MvxCommand<StorySongItemViewModel>(ItemSelected);
         }

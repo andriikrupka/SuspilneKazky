@@ -43,6 +43,16 @@ namespace KazkySuspilne.iOS.Views
 				BackgroundImageView = null;
 			}
 
+			if (CurrentTimeLabel != null) {
+				CurrentTimeLabel.Dispose ();
+				CurrentTimeLabel = null;
+			}
+
+			if (DurationTimeLabel != null) {
+				DurationTimeLabel.Dispose ();
+				DurationTimeLabel = null;
+			}
+
 			if (NextButton != null) {
 				NextButton.Dispose ();
 				NextButton = null;
@@ -66,16 +76,6 @@ namespace KazkySuspilne.iOS.Views
 			if (Slider != null) {
 				Slider.Dispose ();
 				Slider = null;
-			}
-
-			if (CurrentTimeLabel != null) {
-				CurrentTimeLabel.Dispose ();
-				CurrentTimeLabel = null;
-			}
-
-			if (DurationTimeLabel != null) {
-				DurationTimeLabel.Dispose ();
-				DurationTimeLabel = null;
 			}
 		}
 	}
