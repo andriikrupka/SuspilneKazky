@@ -234,6 +234,7 @@
         <Compile Include="Views\StoryPlayerController.designer.cs">
           <DependentUpon>StoryPlayerController.cs</DependentUpon>
         </Compile>
+        <Compile Include="Utilities\CustomPresentationControllerDelegate.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\KazkySuspilne\KazkySuspilne.csproj">

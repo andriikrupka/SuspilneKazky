@@ -1,4 +1,5 @@
-﻿using KazkySuspilne.iOS.Cells;
+﻿using CoreGraphics;
+using KazkySuspilne.iOS.Cells;
 using KazkySuspilne.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;

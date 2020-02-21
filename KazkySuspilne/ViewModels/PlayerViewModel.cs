@@ -3,11 +3,13 @@ using MediaManager;
 using MediaManager.Library;
 using MediaManager.Queue;
 using MvvmCross.Commands;
+using MvvmCross.Logging;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace KazkySuspilne.ViewModels
 {
-    public class PlayerViewModel : MvxViewModel<MediaQueue>
+    public class PlayerViewModel : MvxNavigationViewModel<MediaQueue>
     {
         private double _currentDurationSeconds;
         private double _currentPositionSeconds;
@@ -15,7 +17,8 @@ namespace KazkySuspilne.ViewModels
         private MediaQueue _mediaQueue;
         private IMediaItem _currentMediaItem;
 
-        public PlayerViewModel()
+        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
+            : base(logProvider, navigationService)
         {
             MediaManager.StateChanged += MediaManager_StateChanged;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
@@ -25,6 +28,7 @@ namespace KazkySuspilne.ViewModels
             MediaManager.Volume.VolumeChanged += Volume_VolumeChanged;
             
             PlayPauseCommand = new MvxCommand(() => MediaManager.PlayPause());
+            CloseCommand = new MvxCommand(() => NavigationService.Close(this));
             PlayNextCommand = new MvxCommand(() =>
             {
                 _currentPositionSeconds = 0;
@@ -42,6 +46,8 @@ namespace KazkySuspilne.ViewModels
                 }
             });
         }
+
+        public MvxCommand CloseCommand { get; }
 
         private void Volume_VolumeChanged(object sender, MediaManager.Volume.VolumeChangedEventArgs e)
         {

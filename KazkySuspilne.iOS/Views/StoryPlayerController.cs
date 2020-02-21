@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
 using CoreGraphics;
 using FFImageLoading;
 using Foundation;
+using KazkySuspilne.iOS.Utilities;
 using KazkySuspilne.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvvmCross.Platforms.Ios.Views;
-using ObjCRuntime;
 using UIKit;
-using System.Windows.Input;
 
 namespace KazkySuspilne.iOS.Views
 {
-    //[MvxModalPresentation(ModalPresentationStyle = UIKit.UIModalPresentationStyle.FormSheet)]
+    [MvxModalPresentation(ModalPresentationStyle = UIModalPresentationStyle.FormSheet, WrapInNavigationController = true)]
     public partial class StoryPlayerController : MvxViewController<PlayerViewModel>
     {
-        private string _imageUrl;
+        private string imageUrl;
 
         public StoryPlayerController()
             : base("StoryPlayerController", null)
@@ -26,25 +26,36 @@ namespace KazkySuspilne.iOS.Views
 
         public string ImageUrl
         {
-            get => _imageUrl;
+            get => this.imageUrl;
             set
             {
-                _imageUrl = value;
-                UpdateImage();
+                this.imageUrl = value;
+                this.UpdateImage();
             }
+        }
+
+        public override void WillMoveToParentViewController(UIViewController parent)
+        {
+            base.WillMoveToParentViewController(parent);
+            parent.PresentationController.Delegate = new CustomPresentationControllerDelegate(DismissModalAsync);
+        }
+
+        private void DismissModalAsync()
+        {
+            this.ViewModel.CloseCommand?.Execute();
         }
 
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-            NavigationController?.SetNavigationBarHidden(false, true);
+            this.NavigationController?.SetNavigationBarHidden(true, true);
         }
 
         private void UpdateImage()
         {
-            BackgroundImageView.Image = null;
-            ImageService.Instance.LoadUrl(ImageUrl)
-                                 .Into(BackgroundImageView);
+            this.BackgroundImageView.Image = null;
+            ImageService.Instance.LoadUrl(this.ImageUrl)
+                                 .Into(this.BackgroundImageView);
         }
 
         public override void ViewDidLoad()
@@ -118,7 +129,7 @@ namespace KazkySuspilne.iOS.Views
             }
 
             var bounds = touch.LocationInView(View);
-            if (View.Bounds.Contains(bounds))
+            if (base.View.Bounds.Contains(bounds))
             {
                 if (TapCommand?.CanExecute(null) ?? false)
                 {
