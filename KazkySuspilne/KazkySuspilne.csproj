@@ -13,5 +13,12 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\artists.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\artists.json" />
   </ItemGroup>
 </Project>

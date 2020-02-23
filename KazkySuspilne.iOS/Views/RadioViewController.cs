@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using KazkySuspilne.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
@@ -27,10 +28,20 @@ namespace KazkySuspilne.iOS.Views
 
 
             var bindingSet = this.CreateBindingSet<RadioViewController, RadioViewModel>();
-        }
+            bindingSet.Bind(playButtonBehavior).For(v => v.TapCommand).To(vm => vm.PlayPauseCommand);
+            bindingSet.Bind(PlayButton).For(v => v.Hidden).To(vm => vm.IsRadioPlaying);
+            bindingSet.Bind(PauseButton).For(v => v.Hidden).To(vm => vm.IsRadioPlaying)
+                .WithConversion(
+                new BoolInverterConverter())
+                .WithDictionaryConversion(
+                new Dictionary<bool, bool>
+                {
+                    {true, false},
+                    {false, true}
+                });
 
-        
-        
+            bindingSet.Apply();
+        }
     }
 }
 

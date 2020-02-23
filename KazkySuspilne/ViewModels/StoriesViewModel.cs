@@ -67,6 +67,5 @@ namespace KazkySuspilne.ViewModels
 
             }
         }
-
     }
 }

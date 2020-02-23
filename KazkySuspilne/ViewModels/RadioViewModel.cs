@@ -16,15 +16,32 @@ namespace KazkySuspilne.ViewModels
         {
             radioItem = new MediaItem("https://radio.nrcu.gov.ua:8443/kazka-mp3");
             radioItem.Title = "UA:Казки";
-
-            PlayCommand = new MvxCommand(Play);
+            PlayPauseCommand = new MvxCommand(PlayPause);
             PlayerViewModel = playerViewModel;
-
-            
+            PlayerViewModel.PropertyChanged += PlayerViewModel_PropertyChanged;
         }
 
-        private void Play()
+        private void PlayerViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
+            if (e.PropertyName == nameof(PlayerViewModel.IsPlaying))
+            {
+                RaisePropertyChanged(nameof(IsRadioPlaying));
+            }
+        }
+
+        public PlayerViewModel PlayerViewModel { get; }
+
+        public MvxCommand PlayPauseCommand { get; }
+
+        private void PlayPause()
+        {
+            if (PlayerViewModel.CurrentMediaItem == radioItem)
+            {
+                PlayerViewModel.MediaManager.PlayPause();
+                RaisePropertyChanged(nameof(IsRadioPlaying));
+                return;
+            }
+
             if (PlayerViewModel.CurrentMediaItem != radioItem)
             {
                 PlayerViewModel.CurrentMediaItem = radioItem;
@@ -33,15 +50,6 @@ namespace KazkySuspilne.ViewModels
             PlayerViewModel.MediaManager.Play(radioItem);
         }
 
-
-        public MvxCommand PlayCommand { get; }
-        public PlayerViewModel PlayerViewModel { get; }
-        public MvxCommand PauseCommand { get; }
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-            CrossMediaManager.Current.Play("https://radio.nrcu.gov.ua:8443/kazka-mp3");
-        }
+        public bool IsRadioPlaying => PlayerViewModel.IsPlaying && PlayerViewModel.CurrentMediaItem == radioItem;
     }
 }

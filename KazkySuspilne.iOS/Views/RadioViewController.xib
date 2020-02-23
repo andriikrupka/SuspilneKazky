@@ -48,7 +48,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TA-Ff-deh" userLabel="Pause Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TA-Ff-deh" userLabel="Pause Button">
                             <rect key="frame" x="130.5" y="57" width="14" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="cWX-Ao-nGy"/>
@@ -56,7 +56,7 @@
                             </constraints>
                             <state key="normal" image="online-pause-button"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-wW-JHe" userLabel="Play Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-wW-JHe" userLabel="Play Button">
                             <rect key="frame" x="131" y="59" width="13" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="13" id="SEz-xc-S6I"/>

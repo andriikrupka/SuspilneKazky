@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazkySuspilne", "KazkySuspi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazkySuspilne.iOS", "KazkySuspilne.iOS\KazkySuspilne.iOS.csproj", "{01D23B89-A8F6-4D0C-83DF-DDB30B551B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazkySuspilne.Tools", "KazkySuspilne.Tools\KazkySuspilne.Tools.csproj", "{824D1908-7B10-4ECE-96CC-FA3F48D6502D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,17 @@ Global
 		{01D23B89-A8F6-4D0C-83DF-DDB30B551B1E}.Debug|iPhone.Build.0 = Debug|iPhone
 		{01D23B89-A8F6-4D0C-83DF-DDB30B551B1E}.Release|iPhone.ActiveCfg = Release|iPhone
 		{01D23B89-A8F6-4D0C-83DF-DDB30B551B1E}.Release|iPhone.Build.0 = Release|iPhone
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{824D1908-7B10-4ECE-96CC-FA3F48D6502D}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
