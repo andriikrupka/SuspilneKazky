@@ -8,6 +8,7 @@ using Foundation;
 using KazkySuspilne.iOS.Utilities;
 using KazkySuspilne.ViewModels;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Converters;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvvmCross.Platforms.Ios.Views;
 using UIKit;
@@ -15,13 +16,19 @@ using UIKit;
 namespace KazkySuspilne.iOS.Views
 {
     [MvxModalPresentation(ModalPresentationStyle = UIModalPresentationStyle.FormSheet, WrapInNavigationController = true)]
-    public partial class StoryPlayerController : MvxViewController<PlayerViewModel>
+    public partial class StoryPlayerController : MvxViewController<SongPlayerViewModel>
     {
         private string imageUrl;
+        private UIViewBounceGestureRecognizerBehavior playPauseViewRecognizer;
+        private UIViewBounceGestureRecognizerBehavior nextRecognizer;
+        private UIViewBounceGestureRecognizerBehavior previousViewRecognizer;
 
         public StoryPlayerController()
             : base("StoryPlayerController", null)
         {
+            this.playPauseViewRecognizer = new UIViewBounceGestureRecognizerBehavior();
+            this.nextRecognizer = new UIViewBounceGestureRecognizerBehavior();
+            this.previousViewRecognizer = new UIViewBounceGestureRecognizerBehavior();
         }
 
         public string ImageUrl
@@ -64,22 +71,34 @@ namespace KazkySuspilne.iOS.Views
 
             Slider.Continuous = false;
 
-            var bindingSet = this.CreateBindingSet<StoryPlayerController, PlayerViewModel>();
-            bindingSet.Bind().For(v => v.ImageUrl).To(vm => vm.CurrentMediaItem.ImageUri);
-            bindingSet.Bind(Slider).For(v => v.MaxValue).To(v => v.CurrentDurationSeconds);
-            bindingSet.Bind(Slider).To(v => v.CurrentPositionSeconds);
-            bindingSet.Bind(NextButton).To(vm => vm.PlayNextCommand);
-            bindingSet.Bind(PreviousButton).To(vm => vm.PlayPreviousCommand);
-            bindingSet.Bind(PlayButton).To(vm => vm.PlayPauseCommand);
-            bindingSet.Bind(PauseButton).To(vm => vm.PlayPauseCommand);
-            bindingSet.Bind(CurrentTimeLabel).To(vm => vm.CurrentPositionSeconds)
+            this.PlayPauseView.AddGestureRecognizer(this.playPauseViewRecognizer);
+            this.PreviousButton.AddGestureRecognizer(this.previousViewRecognizer);
+            this.NextButton.AddGestureRecognizer(this.nextRecognizer);
+
+            var bindingSet = this.CreateBindingSet<StoryPlayerController, SongPlayerViewModel>();
+            bindingSet.Bind().For(v => v.ImageUrl).To(vm => vm.PlayerViewModel.CurrentMediaItem.ImageUri);
+            bindingSet.Bind(Slider).For(v => v.MaxValue).To(v => v.PlayerViewModel.CurrentDurationSeconds);
+            bindingSet.Bind(Slider).To(v => v.PlayerViewModel.CurrentPositionSeconds);
+            bindingSet.Bind(NextButton).To(vm => vm.PlayerViewModel.PlayNextCommand);
+            bindingSet.Bind(PreviousButton).To(vm => vm.PlayerViewModel.PlayPreviousCommand);
+            
+            bindingSet.Bind(playPauseViewRecognizer).For(v => v.TapCommand).To(vm => vm.PlayerViewModel.PlayPauseCommand);
+            bindingSet.Bind(nextRecognizer).For(v => v.TapCommand).To(vm => vm.PlayerViewModel.PlayNextCommand);
+            bindingSet.Bind(previousViewRecognizer).For(v => v.TapCommand).To(vm => vm.PlayerViewModel.PlayPreviousCommand);
+            bindingSet.Bind(CurrentTimeLabel).To(vm => vm.PlayerViewModel.CurrentPositionSeconds)
                 .WithConversion(new SecondsToStringConverter());
-            bindingSet.Bind(DurationTimeLabel).To(vm => vm.CurrentDurationSeconds)
+            bindingSet.Bind(DurationTimeLabel).To(vm => vm.PlayerViewModel.CurrentDurationSeconds)
                 .WithConversion(new SecondsToStringConverter());
 
-            bindingSet.Bind(PlayButton).For(v => v.Hidden).To(vm => vm.IsPlaying);
-            bindingSet.Bind(PauseButton).For(v => v.Hidden).To(vm => vm.IsPlaying)
-                .WithDictionaryConversion(new Dictionary<bool, bool>
+            bindingSet.Bind(NameLabel).To(vm => vm.PlayerViewModel.CurrentMediaItem.Title);
+            bindingSet.Bind(AuthorLabel).To(vm => vm.PlayerViewModel.CurrentMediaItem.Artist);
+
+            bindingSet.Bind(PlayButton).For(v => v.Hidden).To(vm => vm.PlayerViewModel.IsPlaying);
+            bindingSet.Bind(PauseButton).For(v => v.Hidden).To(vm => vm.PlayerViewModel.IsPlaying)
+                .WithConversion(
+                new BoolInverterConverter())
+                .WithDictionaryConversion(
+                new Dictionary<bool, bool>
                 {
                     {true, false},
                     {false, true}
@@ -88,7 +107,10 @@ namespace KazkySuspilne.iOS.Views
             bindingSet.Apply();
         }
     }
+    public class BoolInverterConverter : MvxValueConverter
+    {
 
+    }
     public class UIViewBounceGestureRecognizerBehavior : UIGestureRecognizer
     {
         

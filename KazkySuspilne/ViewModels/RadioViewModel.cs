@@ -3,56 +3,40 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 
 namespace KazkySuspilne.ViewModels
 {
     public class RadioViewModel : MvxViewModel
     {
-        private Radio radioItem;
+        private MediaItem radioItem;
 
-        public RadioViewModel()
+        public RadioViewModel(PlayerViewModel playerViewModel)
         {
-            radioItem = new Radio();
+            radioItem = new MediaItem("https://radio.nrcu.gov.ua:8443/kazka-mp3");
             radioItem.Title = "UA:Казки";
-            radioItem.Description = "Суспільне";
-            radioItem.Uri = "https://radio.nrcu.gov.ua:8443/kazka-mp3";
-            radioItem.PropertyChanged += RadioItem_PropertyChanged;
-            radioItem.MediaItems = new List<IMediaItem> {  };
-            CrossMediaManager.Current.StateChanged += Current_StateChanged;
-            CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
-            CrossMediaManager.Current.MediaItemFailed += Current_MediaItemFailed;
-        }
 
-        private void Current_MediaItemFailed(object sender, MediaManager.Media.MediaItemFailedEventArgs e)
-        {
+            PlayCommand = new MvxCommand(Play);
+            PlayerViewModel = playerViewModel;
+
             
         }
 
-        private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
+        private void Play()
         {
-            
-        }
-
-        private void Current_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)
-        {
-            Console.WriteLine(e.State);
-            if (e.State == MediaManager.Player.MediaPlayerState.Failed)
+            if (PlayerViewModel.CurrentMediaItem != radioItem)
             {
-
+                PlayerViewModel.CurrentMediaItem = radioItem;
             }
+
+            PlayerViewModel.MediaManager.Play(radioItem);
         }
 
-        private void RadioItem_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            
-        }
 
-        public override Task Initialize()
-        {
-            
-            return base.Initialize();
-        }
+        public MvxCommand PlayCommand { get; }
+        public PlayerViewModel PlayerViewModel { get; }
+        public MvxCommand PauseCommand { get; }
 
         public override void ViewAppeared()
         {

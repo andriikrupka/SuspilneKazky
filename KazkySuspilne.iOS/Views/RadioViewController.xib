@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioViewController">
             <connections>
+                <outlet property="ButtonWrapView" destination="xaH-07-dtn" id="V3R-rd-pA7"/>
+                <outlet property="PauseButton" destination="8TA-Ff-deh" id="tC1-6W-Qhz"/>
+                <outlet property="PlayButton" destination="PTr-wW-JHe" id="Eqs-KL-qRv"/>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
@@ -16,61 +19,75 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X87-2Z-8bl">
-                    <rect key="frame" x="50" y="383.5" width="275" height="101"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="101" id="6he-Ee-bk1"/>
-                        <constraint firstAttribute="width" constant="275" id="OIt-2i-wU2"/>
-                    </constraints>
-                    <state key="normal" image="online-radio-button"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЛУХАТИ РАДІО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-qT-4D3">
-                    <rect key="frame" x="118" y="399.5" width="139" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="TPt-bW-3jO"/>
-                        <constraint firstAttribute="width" constant="139" id="pWm-WX-HZf"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TA-Ff-deh" userLabel="Pause Button">
-                    <rect key="frame" x="180.5" y="438.5" width="14" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="cWX-Ao-nGy"/>
-                        <constraint firstAttribute="width" constant="14" id="hCg-tB-qLZ"/>
-                    </constraints>
-                    <state key="normal" image="online-pause-button"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-wW-JHe" userLabel="Play Button">
-                    <rect key="frame" x="181" y="438.5" width="13" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="13" id="SEz-xc-S6I"/>
-                        <constraint firstAttribute="height" constant="22" id="VCv-5N-soX"/>
-                    </constraints>
-                    <state key="normal" image="online-play-button"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Радіо хвиля авторських казок українською мовою для дітей" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZq-lB-wsy" userLabel="Title Label">
                     <rect key="frame" x="33" y="167" width="309" height="106.5"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-07-dtn">
+                    <rect key="frame" x="50" y="400" width="275" height="101"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X87-2Z-8bl">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="101"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="101" id="6he-Ee-bk1"/>
+                                <constraint firstAttribute="width" constant="275" id="OIt-2i-wU2"/>
+                            </constraints>
+                            <state key="normal" image="online-radio-button">
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СЛУХАТИ РАДІО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-qT-4D3">
+                            <rect key="frame" x="68" y="16" width="139" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="TPt-bW-3jO"/>
+                                <constraint firstAttribute="width" constant="139" id="pWm-WX-HZf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TA-Ff-deh" userLabel="Pause Button">
+                            <rect key="frame" x="130.5" y="57" width="14" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="cWX-Ao-nGy"/>
+                                <constraint firstAttribute="width" constant="14" id="hCg-tB-qLZ"/>
+                            </constraints>
+                            <state key="normal" image="online-pause-button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTr-wW-JHe" userLabel="Play Button">
+                            <rect key="frame" x="131" y="59" width="13" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="13" id="SEz-xc-S6I"/>
+                                <constraint firstAttribute="height" constant="22" id="VCv-5N-soX"/>
+                            </constraints>
+                            <state key="normal" image="online-play-button"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="8TA-Ff-deh" firstAttribute="bottom" secondItem="X87-2Z-8bl" secondAttribute="bottom" constant="-20" id="Dy3-el-uFX"/>
+                        <constraint firstItem="PTr-wW-JHe" firstAttribute="bottom" secondItem="X87-2Z-8bl" secondAttribute="bottom" constant="-20" id="FYo-fE-ICK"/>
+                        <constraint firstItem="4TQ-qT-4D3" firstAttribute="top" secondItem="X87-2Z-8bl" secondAttribute="top" constant="16" id="K8J-T5-5aD"/>
+                        <constraint firstItem="8TA-Ff-deh" firstAttribute="centerX" secondItem="X87-2Z-8bl" secondAttribute="centerX" id="NHr-bz-0Z5"/>
+                        <constraint firstItem="PTr-wW-JHe" firstAttribute="centerX" secondItem="xaH-07-dtn" secondAttribute="centerX" id="QMi-oG-VQ5"/>
+                        <constraint firstAttribute="height" constant="101" id="Y7k-ny-T5R"/>
+                        <constraint firstItem="X87-2Z-8bl" firstAttribute="centerY" secondItem="xaH-07-dtn" secondAttribute="centerY" id="enG-R8-go4"/>
+                        <constraint firstAttribute="width" constant="275" id="fAx-VV-421"/>
+                        <constraint firstItem="X87-2Z-8bl" firstAttribute="centerX" secondItem="xaH-07-dtn" secondAttribute="centerX" id="gZO-OD-WXQ"/>
+                        <constraint firstItem="4TQ-qT-4D3" firstAttribute="centerX" secondItem="X87-2Z-8bl" secondAttribute="centerX" id="ytY-A5-982"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4TQ-qT-4D3" firstAttribute="top" secondItem="X87-2Z-8bl" secondAttribute="top" constant="16" id="0le-Y5-dWz"/>
-                <constraint firstItem="PTr-wW-JHe" firstAttribute="centerX" secondItem="X87-2Z-8bl" secondAttribute="centerX" id="0pq-XF-Cr9"/>
-                <constraint firstItem="X87-2Z-8bl" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="6vT-Yf-6GQ"/>
-                <constraint firstItem="8TA-Ff-deh" firstAttribute="centerX" secondItem="X87-2Z-8bl" secondAttribute="centerX" id="9pI-yl-A4r"/>
                 <constraint firstItem="rZq-lB-wsy" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="E5i-kI-ujg"/>
-                <constraint firstItem="X87-2Z-8bl" firstAttribute="top" secondItem="2" secondAttribute="centerY" multiplier="1.15" id="IFJ-E8-UwC"/>
-                <constraint firstItem="4TQ-qT-4D3" firstAttribute="centerX" secondItem="X87-2Z-8bl" secondAttribute="centerX" id="ILR-0D-ZmL"/>
                 <constraint firstItem="rZq-lB-wsy" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="33" id="Rbd-Mj-vIS"/>
                 <constraint firstAttribute="trailing" secondItem="rZq-lB-wsy" secondAttribute="trailing" constant="33" id="am4-W7-rUk"/>
+                <constraint firstItem="xaH-07-dtn" firstAttribute="top" secondItem="2" secondAttribute="centerY" multiplier="1.2" id="cuB-2h-RLm"/>
                 <constraint firstItem="rZq-lB-wsy" firstAttribute="top" secondItem="2" secondAttribute="centerY" multiplier="0.5" id="iWd-Pa-G8a"/>
-                <constraint firstItem="8TA-Ff-deh" firstAttribute="top" secondItem="4TQ-qT-4D3" secondAttribute="bottom" constant="14" id="rRT-uc-KWP"/>
-                <constraint firstItem="PTr-wW-JHe" firstAttribute="top" secondItem="4TQ-qT-4D3" secondAttribute="bottom" constant="14" id="scs-dr-tya"/>
+                <constraint firstItem="xaH-07-dtn" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="jLy-WA-Ncm"/>
             </constraints>
             <point key="canvasLocation" x="32.799999999999997" y="53.523238380809602"/>
         </view>

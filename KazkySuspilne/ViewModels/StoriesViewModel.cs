@@ -38,7 +38,7 @@ namespace KazkySuspilne.ViewModels
             }
             
 
-            NavigationService.Navigate<PlayerViewModel, MediaQueue>(queue);
+            NavigationService.Navigate<SongPlayerViewModel, MediaQueue>(queue);
         }
 
         public MvxObservableCollection<StorySongItemViewModel> Stories { get; set; }

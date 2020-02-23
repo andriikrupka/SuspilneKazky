@@ -3,13 +3,11 @@ using MediaManager;
 using MediaManager.Library;
 using MediaManager.Queue;
 using MvvmCross.Commands;
-using MvvmCross.Logging;
-using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace KazkySuspilne.ViewModels
 {
-    public class PlayerViewModel : MvxNavigationViewModel<MediaQueue>
+    public class PlayerViewModel : MvxViewModel
     {
         private double _currentDurationSeconds;
         private double _currentPositionSeconds;
@@ -17,8 +15,7 @@ namespace KazkySuspilne.ViewModels
         private MediaQueue _mediaQueue;
         private IMediaItem _currentMediaItem;
 
-        public PlayerViewModel(IMvxLogProvider logProvider, IMvxNavigationService navigationService)
-            : base(logProvider, navigationService)
+        public PlayerViewModel()
         {
             MediaManager.StateChanged += MediaManager_StateChanged;
             MediaManager.PositionChanged += MediaManager_PositionChanged;
@@ -26,9 +23,10 @@ namespace KazkySuspilne.ViewModels
             MediaManager.MediaItemFailed += MediaManager_MediaItemFailed;
             MediaManager.MediaItemFinished += MediaManager_MediaItemFinished;
             MediaManager.Volume.VolumeChanged += Volume_VolumeChanged;
-            
+
+            MediaManager.ClearQueueOnPlay = true;
+
             PlayPauseCommand = new MvxCommand(() => MediaManager.PlayPause());
-            CloseCommand = new MvxCommand(() => NavigationService.Close(this));
             PlayNextCommand = new MvxCommand(() =>
             {
                 _currentPositionSeconds = 0;
@@ -46,8 +44,6 @@ namespace KazkySuspilne.ViewModels
                 }
             });
         }
-
-        public MvxCommand CloseCommand { get; }
 
         private void Volume_VolumeChanged(object sender, MediaManager.Volume.VolumeChangedEventArgs e)
         {
@@ -97,14 +93,6 @@ namespace KazkySuspilne.ViewModels
         {
             get => _currentMediaItem;
             set => SetProperty(ref _currentMediaItem, value);
-        }
-
-        public override async void Prepare(MediaQueue parameter)
-        {
-            _mediaQueue = parameter;
-            CurrentMediaItem = _mediaQueue.Current;
-            MediaManager.Queue = _mediaQueue;
-            await MediaManager.PlayQueueItem(CurrentMediaItem);
         }
 
         private void MediaManager_StateChanged(object sender, MediaManager.Playback.StateChangedEventArgs e)

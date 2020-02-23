@@ -195,6 +195,7 @@
         <Folder Include="Assets.xcassets\online-pause-button.imageset\" />
         <Folder Include="Assets.xcassets\logo.imageset\" />
         <Folder Include="Assets.xcassets\info-icon.imageset\" />
+        <Folder Include="Controls\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -235,6 +236,7 @@
           <DependentUpon>StoryPlayerController.cs</DependentUpon>
         </Compile>
         <Compile Include="Utilities\CustomPresentationControllerDelegate.cs" />
+        <Compile Include="Controls\RadioPlayButton.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\KazkySuspilne\KazkySuspilne.csproj">
